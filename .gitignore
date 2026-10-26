@@ -1,7 +1,10 @@
-# Ignore everything, then allow what belongs here.
+# Ignore everything; allow only the files listed.
 *
 !*/
 
 !.gitignore
 !README.md
 !LICENSE
+!format
+!package.yaml
+!packages/*/files/*
