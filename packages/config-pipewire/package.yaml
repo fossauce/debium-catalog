@@ -1,0 +1,18 @@
+# No PipeWire dependency: it would change the audio stack. Without
+# PipeWire these files do nothing.
+name: config-pipewire
+summary: "Audio tuning: Wine latency, native sample rates, HDMI ranked last"
+description: |
+  Raises the minimum PulseAudio quantum for Wine to avoid audio dropouts,
+  plays 44.1 and 96 kHz audio without resampling, and ranks HDMI and
+  DisplayPort outputs last for the default. On desktops, outputs do not
+  suspend: no HDMI or DisplayPort cut-off, no USB audio pops.
+kind: config
+version: "1"
+files:
+  - {local: 10-sample-rates.conf, to: /usr/share/pipewire/pipewire.conf.d/10-debium-sample-rates.conf}
+  - {local: 10-wine-audio.conf, to: /usr/share/pipewire/pipewire-pulse.conf.d/10-debium-wine-audio.conf}
+  - {local: 52-hdmi-priority.conf, to: /usr/share/wireplumber/wireplumber.conf.d/52-debium-hdmi-priority.conf}
+  - {local: 51-disable-suspend.conf, to: /usr/share/wireplumber/wireplumber.conf.d/51-debium-disable-suspend.conf, when: {chassis: desktop}}
+notes:
+  install: Applies at the next login. Real-time audio needs the pipewire group (pipewire-bin).
