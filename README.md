@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/fossauce/debium-catalog/main/.github/logo/debium-catalog-wordmark-dark.svg">
-    <img alt="debium-catalog" src="https://raw.githubusercontent.com/fossauce/debium-catalog/main/.github/logo/debium-catalog-wordmark.svg" height="56">
+    <img alt="debium-catalog" src="https://raw.githubusercontent.com/fossauce/debium-catalog/main/.github/logo/debium-catalog-wordmark.svg" height="62">
   </picture>
 </p>
 
