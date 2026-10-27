@@ -1,0 +1,10 @@
+name: archivers
+summary: Tools to open and create common archive formats
+description: |
+  Opens zip, rar, 7z, tar, zst, lz, lz4, arj, cab, iso and more; creates
+  zip, 7z, zst, lz, lz4 and arj.
+kind: meta
+version: "1"
+depends: [7zip, unar, zstd, lzip, lz4, zip, unzip, arj]
+# non-free: installed only where that component is enabled.
+recommends: [unrar]
