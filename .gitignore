@@ -8,3 +8,4 @@
 !format
 !package.yaml
 !packages/*/files/*
+!.github/logo/*.svg
