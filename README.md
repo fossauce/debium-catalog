@@ -1,2 +1,3 @@
-# debium-pkg
-debium-packages
+# debium-catalog
+
+Package definitions for debium.
