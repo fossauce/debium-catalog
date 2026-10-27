@@ -1,0 +1,24 @@
+name: config-system
+summary: "System tuning: memory, disks, kernel, systemd"
+description: |
+  Fixed writeback limits, cache and huge page tuning, BFQ for SATA, USB
+  and SD disks, a 15s shutdown timeout, a 1 GB journal cap, no motherboard
+  beeper or hardware watchdogs, quieter rtkit logs; on desktops, SATA links
+  at full power.
+kind: config
+version: "1"
+files:
+  - {local: 99-system.conf, to: /usr/lib/sysctl.d/99-debium-system.conf}
+  - {local: 00-timeout.conf, to: /usr/lib/systemd/system.conf.d/00-debium-timeout.conf}
+  - {local: 00-timeout.conf, to: /usr/lib/systemd/user.conf.d/00-debium-timeout.conf}
+  - {local: 00-journal-size.conf, to: /usr/lib/systemd/journald.conf.d/00-debium-size.conf}
+  - {local: 60-scheduler.rules, to: /usr/lib/udev/rules.d/60-debium-scheduler.rules}
+  - {local: thp-shrinker.conf, to: /usr/lib/tmpfiles.d/debium-thp-shrinker.conf}
+  - {local: thp-defrag.conf, to: /usr/lib/tmpfiles.d/debium-thp-defrag.conf}
+  - {local: pcspkr-blacklist.conf, to: /usr/lib/modprobe.d/debium-pcspkr-blacklist.conf}
+  - {local: watchdog-blacklist.conf, to: /usr/lib/modprobe.d/debium-watchdog-blacklist.conf}
+  - {local: 50-sata-power.rules, to: /usr/lib/udev/rules.d/50-debium-sata-power.rules, when: {chassis: desktop}}
+  - {local: rtkit-loglevel.conf, to: /usr/lib/systemd/system/rtkit-daemon.service.d/debium-loglevel.conf}
+notes:
+  install: User timeouts apply at the next login; the beeper, watchdog, SATA and rtkit settings after a reboot.
+  remove: Sysctl values, disk scheduler and THP settings stay until a reboot.

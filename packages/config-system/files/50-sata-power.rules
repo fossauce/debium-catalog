@@ -1,0 +1,9 @@
+# Installed by debium (config-system).
+# Override: same file name in /etc/udev/rules.d/
+# (a link to /dev/null there disables it).
+
+# Desktops: SATA links at full power. Debian's default policy saves power but
+# adds latency when a link wakes.
+ACTION=="add", SUBSYSTEM=="scsi_host", KERNEL=="host*", \
+    ATTR{link_power_management_supported}=="1", \
+    ATTR{link_power_management_policy}="max_performance"
