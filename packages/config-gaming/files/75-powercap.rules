@@ -1,0 +1,8 @@
+# Installed by debium (config-gaming).
+# Override: same file name in /etc/udev/rules.d/
+# (a link to /dev/null there disables it).
+
+# CPU power readable without root (MangoHud, powertop), by the video group
+# only: a world-readable energy_uj is the PLATYPUS side channel
+# (CVE-2020-8694).
+ENV{SUBSYSTEM}=="powercap", ACTION=="add|change", RUN+="/usr/bin/find /sys$env{DEVPATH} -name energy_uj -exec chmod 440 {} + -exec chown root:video {} +"
