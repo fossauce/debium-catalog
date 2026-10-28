@@ -39,6 +39,8 @@
   `conflicts` are checked against Debian.
 - Every download has a `sha256` and a `size`.
 - A changed definition raises `revision`; a new `version` starts it at 1.
+- `maintainer: Name <email>` names who maintains a definition; without it,
+  packages name `FOSSauce <fossauce@tuta.io>`.
 - Files go to fixed places under `/usr` and `/opt/<name>`; `/etc` and
   `/usr/local` belong to the admin and are refused. One exception, as in
   Debian's font packages: `/etc/fonts/conf.d/NN-name.conf` may link to the
