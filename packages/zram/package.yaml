@@ -1,0 +1,14 @@
+name: zram
+summary: Compressed swap in RAM with zstd
+description: |
+  systemd-zram-generator with zstd, half of RAM, at most 8 GiB. Swappiness
+  100 and page-cluster 0, as the kernel documents for swap in RAM.
+kind: config
+version: "1"
+depends: [systemd-zram-generator]
+files:
+  - {local: zram.conf, to: /usr/lib/systemd/zram-generator.conf.d/debium-zram.conf}
+  - {local: 99-zram.conf, to: /usr/lib/sysctl.d/99-debium-zram.conf}
+notes:
+  install: Applies after a reboot.
+  remove: Settings stay until a reboot.
