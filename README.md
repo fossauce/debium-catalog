@@ -29,7 +29,7 @@
 | `repack` | packs files upstream already built |
 | `source` | compiles upstream source on the machine, as the user |
 | `deb` | installs a vendor `.deb` unchanged, after checks |
-| `meta` | depends on Debian packages only |
+| `meta` | depends on Debian packages; may add Debian components, backports and pins |
 | `apt` | adds a vendor repository, pinned, and installs packages from it |
 | `config` | installs configuration into Debian's drop-in folders |
 
@@ -38,13 +38,19 @@
 - No definition replaces a Debian package: names, `provides`, `replaces` and
   `conflicts` are checked against Debian.
 - Every download has a `sha256` and a `size`.
-- A changed definition raises `revision`; a new `version` starts it at 1.
-- `maintainer: Name <email>` names who maintains a definition; without it,
-  packages name `FOSSauce <fossauce@tuta.io>`.
-- Files go to fixed places under `/usr` and `/opt/<name>`; `/etc` and
-  `/usr/local` belong to the admin and are refused. One exception, as in
-  Debian's font packages: `/etc/fonts/conf.d/NN-name.conf` may link to the
-  same name in `/usr/share/fontconfig/conf.avail/`.
+- A changed definition raises `revision`; a new `version` resets it to 1.
+- `maintainer: Name <email>`; default `FOSSauce <fossauce@tuta.io>`.
+- Files go under `/usr` and `/opt/<name>`. `/etc` and `/usr/local` are
+  refused, except:
+  - `/etc/fonts/conf.d/NN-name.conf`, a link to the same name in
+    `/usr/share/fontconfig/conf.avail/`, as Debian's font packages do.
+  - `/etc/apt/sources.list.d/debium-<name>.sources` and
+    `/etc/apt/preferences.d/debium-<name>.pref`.
+  - Kind `apt`: `<repo>-archive-keyring.sources` and `.pref` there, the key
+    in `/usr/share/keyrings/`.
+- Debian sources come only from Debian's archive for the release. Backports
+  keeps Debian's default priority unless pinned.
+- `requires` names catalog packages installed first.
 
 ## Use
 

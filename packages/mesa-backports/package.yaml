@@ -1,0 +1,13 @@
+name: mesa-backports
+summary: Mesa graphics drivers from backports
+description: |
+  All Mesa packages, 64-bit and 32-bit, from backports: newer OpenGL, Vulkan
+  and video drivers. Other dependencies stay on the release.
+kind: meta
+version: "1"
+requires: [sources-backports]
+depends: [mesa-vulkan-drivers, libgl1-mesa-dri, libglx-mesa0, mesa-va-drivers]
+pins:
+  - {source: mesa, suite: backports}
+notes:
+  install: Installed Mesa packages move to backports at the next debium upgrade.

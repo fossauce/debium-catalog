@@ -1,0 +1,13 @@
+name: firmware
+summary: Firmware from backports, and CPU microcode
+description: |
+  firmware-linux: firmware for common hardware, Intel and AMD microcode.
+  Firmware from backports, for current kernels; microcode from the release.
+kind: meta
+version: "1"
+requires: [sources-nonfree, sources-backports]
+depends: [firmware-linux]
+pins:
+  - {source: firmware-nonfree, suite: backports}
+notes:
+  install: Installed firmware moves to backports at the next debium upgrade. Loads after a reboot.
