@@ -4,14 +4,15 @@ description: |
   A rewrite of the pfetch system information tool in Rust.
 kind: repack
 homepage: https://github.com/Gobidev/pfetch-rs
-version: 3.0.2
+watch: {github: Gobidev/pfetch-rs}
+version: 3.1.1
 depends: ["libc6 (>= 2.39)", "libgcc-s1 (>= 4.2)"]
 sources:
   - id: bin
     arch: amd64
     url: https://github.com/Gobidev/pfetch-rs/releases/download/v{version}/pfetch-linux-gnu-x86_64.tar.gz
-    sha256: 3f2170afc33890aebeaafe927ed734e3e4bd64e04f3fe391b74163f5c6ad295e
-    size: 1518591
+    sha256: 31628f2d9d463beff1fa36e748250a462b0d69358aa03dfe898fccb34e24df09
+    size: 1599737
     extract: {format: tar.gz}
   - id: license
     url: https://raw.githubusercontent.com/Gobidev/pfetch-rs/v{version}/LICENSE
