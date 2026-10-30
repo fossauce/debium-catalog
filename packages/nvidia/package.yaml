@@ -1,0 +1,18 @@
+name: nvidia
+summary: NVIDIA driver from NVIDIA's repository
+description: Open kernel modules. Turing and newer.
+kind: apt
+homepage: https://developer.nvidia.com/datacenter-driver-downloads
+repo:
+  name: cuda
+  uris: https://developer.download.nvidia.com/compute/cuda/repos/debian13/x86_64/
+  suites: [/]
+  adds-source: cuda-keyring
+  pin: false
+  key:
+    url: https://developer.download.nvidia.com/compute/cuda/repos/debian13/x86_64/8793F200.pub
+    fingerprints: [02182E60104FCDC26EAE1B8597A5D4CB8793F200]
+packages: [cuda-keyring, nvidia-open]
+with: [nvtop]
+notes:
+  install: Loads after a reboot.

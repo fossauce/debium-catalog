@@ -1,0 +1,9 @@
+name: nvidia-vaapi
+summary: VA-API driver for NVIDIA, from backports
+description: nvidia-vaapi-driver.
+kind: meta
+version: "1"
+requires: [sources-backports, nvidia]
+depends: [nvidia-vaapi-driver]
+pins:
+  - {source: nvidia-vaapi-driver, suite: backports}
