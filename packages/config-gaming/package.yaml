@@ -1,9 +1,6 @@
 name: config-gaming
-summary: "Gaming tuning: split-lock mitigation off, CPU power readout"
-description: |
-  Turns off split-lock mitigation, which slows down some Windows games
-  under Wine and Proton, loads the ntsync driver for Wine and Proton, and
-  lets the video group read CPU power use (MangoHud, powertop).
+summary: Gaming tuning
+description: Split-lock mitigation off, ntsync for Wine and Proton, CPU power readable by the video group.
 kind: config
 version: "1"
 files:
@@ -11,5 +8,4 @@ files:
   - {local: 75-powercap.rules, to: /usr/lib/udev/rules.d/75-powercap.rules}
   - {local: ntsync.conf, to: /usr/lib/modules-load.d/debium-ntsync.conf}
 notes:
-  install: The video group can read CPU power use.
-  remove: Split-lock mitigation and the power readout reset after a reboot.
+  remove: Split-lock mitigation and power readout reset after a reboot.

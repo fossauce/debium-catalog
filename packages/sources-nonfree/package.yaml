@@ -1,8 +1,6 @@
 name: sources-nonfree
-summary: Debian's contrib, non-free and non-free-firmware
-description: |
-  Adds the missing components to the release, updates and security suites.
-  Firmware, microcode and some drivers are in them.
+summary: Debian contrib, non-free, non-free-firmware
+description: For the release, updates and security.
 kind: meta
 version: "1"
 debian-components: [contrib, non-free, non-free-firmware]

@@ -1,8 +1,6 @@
 name: power-profiles
 summary: Power profiles with tuned
-description: |
-  tuned with tuned-ppd, in place of power-profiles-daemon. The desktop's
-  power modes switch tuned profiles.
+description: tuned and tuned-ppd instead of power-profiles-daemon.
 kind: meta
 version: "1"
 depends: [tuned, tuned-ppd]

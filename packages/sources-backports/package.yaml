@@ -1,8 +1,6 @@
 name: sources-backports
-summary: Debian's backports suite
-description: |
-  Adds backports with the release's components, at Debian's default
-  priority: used only when asked for or pinned.
+summary: Debian backports
+description: "At Debian's default priority: used only when asked for or pinned."
 kind: meta
 version: "1"
 debian-suites: [backports]

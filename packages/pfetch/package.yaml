@@ -1,7 +1,6 @@
 name: pfetch
-summary: Pretty system information tool
-description: |
-  A rewrite of the pfetch system information tool in Rust.
+summary: System information tool
+description: pfetch in Rust.
 kind: repack
 homepage: https://github.com/Gobidev/pfetch-rs
 watch: {github: Gobidev/pfetch-rs}

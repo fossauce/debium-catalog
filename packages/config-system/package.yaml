@@ -1,10 +1,6 @@
 name: config-system
-summary: "System tuning: memory, disks, kernel, systemd"
-description: |
-  Fixed writeback limits, cache and huge page tuning, BFQ for SATA, USB
-  and SD disks, a 15s shutdown timeout, a 1 GB journal cap, no motherboard
-  beeper or hardware watchdogs, quieter rtkit logs; on desktops, SATA links
-  at full power.
+summary: System tuning
+description: Writeback limits, cache and huge page tuning, BFQ for SATA, USB and SD, 15s shutdown timeout, 1 GB journal, no beeper or watchdogs, quieter rtkit; on desktops, SATA at full power.
 kind: config
 version: "1"
 files:
@@ -20,5 +16,5 @@ files:
   - {local: 50-sata-power.rules, to: /usr/lib/udev/rules.d/50-debium-sata-power.rules, when: {chassis: desktop}}
   - {local: rtkit-loglevel.conf, to: /usr/lib/systemd/system/rtkit-daemon.service.d/debium-loglevel.conf}
 notes:
-  install: User timeouts apply at the next login; the beeper, watchdog, SATA and rtkit settings after a reboot.
-  remove: Sysctl values, disk scheduler and THP settings stay until a reboot.
+  install: Applies at the next login or after a reboot.
+  remove: Some settings stay until a reboot.
