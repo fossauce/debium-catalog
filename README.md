@@ -36,8 +36,10 @@
 ## Rules
 
 - No definition replaces a Debian package: names, `provides`, `replaces` and
-  `conflicts` are checked against Debian.
-- Every download has a `sha256` and a `size`.
+  `conflicts` are checked against Debian. Exception: kind `apt` with
+  `pin: false`, for a vendor stack that replaces Debian packages on purpose.
+- Every download has a `sha256` and a `size`; an apt key has its
+  fingerprints.
 - A changed definition raises `revision`; a new `version` resets it to 1.
 - `maintainer: Name <email>`; default `FOSSauce <fossauce@tuta.io>`.
 - Files go under `/usr` and `/opt/<name>`. `/etc` and `/usr/local` are
@@ -48,6 +50,8 @@
     `/etc/apt/preferences.d/debium-<name>.pref`.
   - Kind `apt`: `<repo>-archive-keyring.sources` and `.pref` there, the key
     in `/usr/share/keyrings/`.
+- Kind `apt` with `adds-source: <package>`: that vendor package adds the
+  source and key; debium adds the pin, unless `pin: false`.
 - Debian sources come only from Debian's archive for the release. Backports
   keeps Debian's default priority unless pinned.
 - `requires` names catalog packages installed first.
