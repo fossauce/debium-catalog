@@ -1,0 +1,7 @@
+name: floorp
+uris: https://ppa.floorp.app/amd64/
+suites: [./]
+architectures: [amd64]
+key:
+  url: https://ppa.floorp.app/KEY.gpg
+  fingerprints: [A8C20FCDD57739941A813D5D8F64DCC7C806D572]

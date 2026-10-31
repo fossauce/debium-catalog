@@ -1,0 +1,6 @@
+name: floorp
+summary: Web browser based on Firefox
+kind: apt
+homepage: https://floorp.app/
+repo: floorp
+packages: [floorp]

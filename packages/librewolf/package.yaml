@@ -1,0 +1,6 @@
+name: librewolf
+summary: Web browser based on Firefox
+kind: apt
+homepage: https://librewolf.net/
+repo: librewolf
+packages: [librewolf]

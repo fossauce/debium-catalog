@@ -1,0 +1,6 @@
+name: microsoft-edge
+summary: Web browser from Microsoft
+kind: apt
+homepage: https://www.microsoft.com/edge
+repo: microsoft-edge
+packages: [microsoft-edge-stable]

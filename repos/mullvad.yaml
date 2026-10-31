@@ -1,0 +1,8 @@
+name: mullvad
+uris: https://repository.mullvad.net/deb/stable
+suites: [stable]
+components: [main]
+architectures: [amd64]
+key:
+  url: https://repository.mullvad.net/deb/mullvad-keyring.asc
+  fingerprints: [A1198702FC3E0A09A9AE5B75D5A1D4F266DE8DDF]

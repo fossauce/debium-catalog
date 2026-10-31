@@ -1,0 +1,9 @@
+name: opera
+uris: https://deb.opera.com/opera-stable/
+suites: [stable]
+components: [non-free]
+architectures: [amd64]
+adds-source: opera-stable
+key:
+  url: https://deb.opera.com/archive.key
+  fingerprints: [6C86BE214648376680CA957B11EE8C00B693A745]

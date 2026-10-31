@@ -1,0 +1,7 @@
+name: brave-origin
+summary: Web browser from Brave, without Brave's services
+kind: apt
+homepage: https://brave.com/linux/
+repo: brave
+packages: [brave-origin]
+allow: [brave-keyring]

@@ -1,0 +1,7 @@
+name: brave
+summary: Web browser from Brave
+kind: apt
+homepage: https://brave.com/linux/
+repo: brave
+packages: [brave-browser]
+allow: [brave-keyring]

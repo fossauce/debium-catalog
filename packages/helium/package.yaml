@@ -1,0 +1,6 @@
+name: helium
+summary: Web browser based on Chromium
+kind: apt
+homepage: https://helium.computer/
+repo: helium
+packages: [helium-bin]
