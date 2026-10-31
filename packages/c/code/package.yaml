@@ -4,3 +4,9 @@ homepage: https://code.visualstudio.com/
 depends: [gpg]
 inputs:
   - apt: {index: vscode, package: code}
+alternatives:
+  - {name: editor, link: /usr/bin/editor, path: /usr/bin/code, priority: 0}
+build:
+  script: |
+    install -d "$DESTDIR/usr/bin"
+    ln -s /usr/share/code/bin/code "$DESTDIR/usr/bin/code"

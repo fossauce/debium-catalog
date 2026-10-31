@@ -3,3 +3,7 @@ summary: Messenger from Signal
 homepage: https://signal.org/download/linux/
 inputs:
   - apt: {index: signal, package: signal-desktop}
+build:
+  script: |
+    install -d "$DESTDIR/usr/bin"
+    ln -s /opt/Signal/signal-desktop "$DESTDIR/usr/bin/signal-desktop"

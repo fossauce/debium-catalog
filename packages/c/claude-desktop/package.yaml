@@ -3,3 +3,10 @@ summary: Claude app from Anthropic
 homepage: https://claude.ai/download
 inputs:
   - apt: {index: claude-desktop, package: claude-desktop}
+build:
+  script: |
+    r="$DESTDIR/usr/lib/claude-desktop/resources"
+    install -Dm644 "$r/linux-mime/com.anthropic.Claude.xml" -t "$DESTDIR/usr/share/mime/packages/"
+    install -Dm644 "$r/gnome-search-provider/com.anthropic.Claude.search-provider.ini" -t "$DESTDIR/usr/share/gnome-shell/search-providers/"
+    install -Dm644 "$r/gnome-search-provider/com.anthropic.Claude.SearchProvider.service" -t "$DESTDIR/usr/share/dbus-1/services/"
+    ln -s ../lib/claude-desktop/resources/bin/ccd "$DESTDIR/usr/bin/ccd"

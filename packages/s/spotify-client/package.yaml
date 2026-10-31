@@ -3,3 +3,10 @@ summary: Music streaming from Spotify
 homepage: https://www.spotify.com/
 inputs:
   - apt: {index: spotify, package: spotify-client}
+build:
+  script: |
+    install -d "$DESTDIR/usr/share/applications"
+    ln -s ../spotify/spotify.desktop "$DESTDIR/usr/share/applications/spotify.desktop"
+    for s in 16 22 24 32 48 64 128 256 512; do
+      install -Dm644 "$DESTDIR/usr/share/spotify/icons/spotify-linux-$s.png" "$DESTDIR/usr/share/icons/hicolor/${s}x$s/apps/spotify-client.png"
+    done

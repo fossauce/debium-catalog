@@ -3,3 +3,9 @@ summary: Code editor from VSCodium
 homepage: https://vscodium.com/
 inputs:
   - apt: {index: vscodium, package: codium}
+alternatives:
+  - {name: editor, link: /usr/bin/editor, path: /usr/bin/codium, priority: 0}
+build:
+  script: |
+    install -d "$DESTDIR/usr/bin"
+    ln -s /usr/share/codium/bin/codium "$DESTDIR/usr/bin/codium"

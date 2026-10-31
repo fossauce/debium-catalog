@@ -4,3 +4,12 @@ homepage: https://brave.com/linux/
 inputs:
   - apt: {index: brave, package: brave-origin}
   - apt: {index: brave, package: brave-keyring}
+alternatives:
+  - {name: x-www-browser, link: /usr/bin/x-www-browser, path: /usr/bin/brave-origin-stable, priority: 200}
+  - {name: gnome-www-browser, link: /usr/bin/gnome-www-browser, path: /usr/bin/brave-origin-stable, priority: 200}
+build:
+  script: |
+    for s in 16 24 32 48 64 128 256; do
+      install -Dm644 "$DESTDIR/opt/brave.com/brave-origin/product_logo_$s.png" "$DESTDIR/usr/share/icons/hicolor/${s}x$s/apps/brave-origin.png"
+    done
+    ln -s brave-origin-stable "$DESTDIR/usr/bin/brave-origin"

@@ -51,7 +51,8 @@ installs the rest from `$SRC` into `$DESTDIR`.
 - Definitions have no scripts; vendor scripts never run, except in a
   `vendor-stack`. Scripts are generated from the package's paths.
 - A definition with vendor `.deb` inputs has only those and is named after
-  one of them.
+  one of them. Its `build.script` adds what the vendor's scripts would have
+  (links, icons, menu entries) as files in that package.
 - A changed definition raises `revision`; a new `version` resets it to 1.
 - `maintainer: Name <email>`; default `FOSSauce <fossauce@tuta.io>`.
 - Files go under `/usr` and `/opt/<name>`. `/etc` and `/usr/local` are

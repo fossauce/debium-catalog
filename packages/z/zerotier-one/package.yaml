@@ -3,3 +3,7 @@ summary: Virtual network from ZeroTier
 homepage: https://www.zerotier.com/download/
 inputs:
   - apt: {index: zerotier, package: zerotier-one}
+build:
+  script: |
+    install -d "$DESTDIR/usr/lib/sysusers.d"
+    echo 'u zerotier-one - "ZeroTier" /var/lib/zerotier-one /usr/sbin/nologin' > "$DESTDIR/usr/lib/sysusers.d/zerotier-one.conf"

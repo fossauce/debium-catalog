@@ -3,3 +3,7 @@ summary: Team chat from Mattermost
 homepage: https://mattermost.com/download/
 inputs:
   - apt: {index: mattermost, package: mattermost-desktop}
+build:
+  script: |
+    install -d "$DESTDIR/usr/bin"
+    ln -s /opt/Mattermost/mattermost-desktop "$DESTDIR/usr/bin/mattermost-desktop"

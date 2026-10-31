@@ -3,3 +3,7 @@ summary: Matrix client from Element
 homepage: https://element.io/download
 inputs:
   - apt: {index: element, package: element-desktop}
+build:
+  script: |
+    install -d "$DESTDIR/usr/bin"
+    ln -s /opt/Element/element-desktop "$DESTDIR/usr/bin/element-desktop"

@@ -3,3 +3,5 @@ summary: VPN from Mullvad
 homepage: https://mullvad.net/download
 inputs:
   - apt: {index: mullvad, package: mullvad-vpn}
+modes:
+  /usr/bin/mullvad-exclude: "4755 root:root"

@@ -3,3 +3,17 @@ summary: Password manager from 1Password
 homepage: https://1password.com/downloads/linux
 inputs:
   - apt: {index: 1password, package: 1password}
+modes:
+  /opt/1Password/1Password-BrowserSupport: "2755 root:onepassword"
+  /opt/1Password/1password-mcp: "2755 root:onepassword-mcp"
+build:
+  script: |
+    install -d "$DESTDIR/usr/bin"
+    ln -s /opt/1Password/1password "$DESTDIR/usr/bin/1password"
+    ln -s /opt/1Password/1password-mcp "$DESTDIR/usr/bin/1password-mcp"
+    ln -s 1password-mcp "$DESTDIR/opt/1Password/onepassword-mcp"
+    # System unlock: the machine's users (UID 1000 and up) own the policy.
+    owners="$(cut -d: -f1,3 /etc/passwd | grep -E ':[0-9]{4}$' | cut -d: -f1 | head -n 10 | sed 's/^/unix-user:/' | tr '\n' ' ')"
+    install -d "$DESTDIR/usr/share/polkit-1/actions"
+    sed "s/\${POLICY_OWNERS}/$owners/" "$DESTDIR/opt/1Password/com.1password.1Password.policy.tpl" \
+      > "$DESTDIR/usr/share/polkit-1/actions/com.1password.1Password.policy"

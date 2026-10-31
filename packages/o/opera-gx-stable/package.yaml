@@ -3,3 +3,6 @@ summary: Gaming web browser from Opera
 homepage: https://www.opera.com/gx
 inputs:
   - apt: {index: opera-gx, package: opera-gx-stable}
+alternatives:
+  - {name: x-www-browser, link: /usr/bin/x-www-browser, path: /usr/bin/opera-gx, priority: 120}
+  - {name: gnome-www-browser, link: /usr/bin/gnome-www-browser, path: /usr/bin/opera-gx, priority: 120}
