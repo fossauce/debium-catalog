@@ -8,5 +8,5 @@
 !format
 !package.yaml
 !repos/*.yaml
-!packages/*/files/*
+!packages/*/*/files/*
 !.github/logo/*.svg

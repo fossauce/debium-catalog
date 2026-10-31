@@ -19,8 +19,8 @@
 | Path | Contents |
 |---|---|
 | `format` | format version debium checks before reading |
-| `packages/<name>/package.yaml` | one definition |
-| `packages/<name>/files/` | files a definition installs as they are |
+| `packages/<x>/<name>/package.yaml` | one definition; `<x>` is the first character of `<name>`, or `lib` and the next one (`libf/libfoo`), as in Debian's pool |
+| `packages/<x>/<name>/files/` | files a definition installs as they are |
 | `repos/<name>.yaml` | a vendor apt repository; kind `apt` names it in `repo` |
 
 ## Kinds
@@ -51,7 +51,9 @@
   - `/etc/apt/sources.list.d/debium-<name>.sources` and
     `/etc/apt/preferences.d/debium-<name>.pref`.
   - Kind `apt`: `debium-<repo>-keyring.sources` and `.pref` there, the key
-    in `/usr/share/keyrings/`.
+    in `/usr/share/keyrings/`; with `cron-opt-out: <name>`,
+    `/etc/default/<name>`, which stops the vendor's daily cron job from adding
+    a source and a key.
 - A repository with `adds-source: <package>`: that vendor package adds the
   source and key; debium adds the pin, unless `pin: false`.
 - Debian sources come only from Debian's archive for the release. Backports
