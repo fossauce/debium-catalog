@@ -21,13 +21,14 @@
 | `format` | format version debium checks before reading |
 | `packages/<name>/package.yaml` | one definition |
 | `packages/<name>/files/` | files a definition installs as they are |
+| `repos/<name>.yaml` | a vendor apt repository; kind `apt` names it in `repo` |
 
 ## Kinds
 
 | Kind | debium |
 |---|---|
 | `repack` | packs files upstream already built |
-| `source` | compiles upstream source on the machine, as the user |
+| `source` | compiles upstream source on the machine, as the user, in a sandbox |
 | `deb` | installs a vendor `.deb` unchanged, after checks |
 | `meta` | depends on Debian packages; may add Debian components, backports and pins |
 | `apt` | adds a vendor repository, pinned, and installs packages from it |
@@ -36,8 +37,9 @@
 ## Rules
 
 - No definition replaces a Debian package: names, `provides`, `replaces` and
-  `conflicts` are checked against Debian. Exception: kind `apt` with
-  `pin: false`, for a vendor stack that replaces Debian packages on purpose.
+  `conflicts` are checked against Debian. Exceptions: a repository with
+  `pin: false`, for a vendor stack that replaces Debian packages on purpose;
+  `replaces-debian: true`, while debium's version is newer than Debian's.
 - Every download has a `sha256` and a `size`; an apt key has its
   fingerprints.
 - A changed definition raises `revision`; a new `version` resets it to 1.
@@ -48,13 +50,17 @@
     `/usr/share/fontconfig/conf.avail/`, as Debian's font packages do.
   - `/etc/apt/sources.list.d/debium-<name>.sources` and
     `/etc/apt/preferences.d/debium-<name>.pref`.
-  - Kind `apt`: `<repo>-archive-keyring.sources` and `.pref` there, the key
+  - Kind `apt`: `debium-<repo>-keyring.sources` and `.pref` there, the key
     in `/usr/share/keyrings/`.
-- Kind `apt` with `adds-source: <package>`: that vendor package adds the
+- A repository with `adds-source: <package>`: that vendor package adds the
   source and key; debium adds the pin, unless `pin: false`.
 - Debian sources come only from Debian's archive for the release. Backports
   keeps Debian's default priority unless pinned.
 - `requires` names catalog packages installed first.
+- In `repos/`: `uris`, `suites` and `key.url` take `{codename}` (`trixie`)
+  and `{release}` (`13`). Quote them in lists: `["{codename}"]`.
+- `user-groups` (kinds `apt`, `deb`): the user joins these groups, created by
+  the packages, and leaves them on removal.
 
 ## Use
 

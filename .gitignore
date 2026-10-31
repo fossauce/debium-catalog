@@ -7,5 +7,6 @@
 !LICENSE
 !format
 !package.yaml
+!repos/*.yaml
 !packages/*/files/*
 !.github/logo/*.svg
