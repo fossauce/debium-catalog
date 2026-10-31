@@ -1,0 +1,5 @@
+name: element-desktop
+summary: Matrix client from Element
+homepage: https://element.io/download
+inputs:
+  - apt: {index: element, package: element-desktop}

@@ -1,0 +1,7 @@
+name: librewolf
+uri: https://repo.librewolf.net
+suite: librewolf
+components: [main]
+key:
+  url: https://repo.librewolf.net/keyring.gpg
+  fingerprints: [662E3CDD6FE329002D0CA5BB40339DD82B12EF16]

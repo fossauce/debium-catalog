@@ -1,6 +1,0 @@
-name: slack
-summary: Team chat from Slack
-kind: apt
-homepage: https://slack.com/downloads/linux
-repo: slack
-packages: [slack-desktop]

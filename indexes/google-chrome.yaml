@@ -1,0 +1,7 @@
+name: google-chrome
+uri: https://dl.google.com/linux/chrome-stable/deb/
+suite: stable
+components: [main]
+key:
+  url: https://dl.google.com/linux/linux_signing_key.pub
+  fingerprints: [EB4C1BFD4F042F6DDDCCEC917721F63BD38B4796]

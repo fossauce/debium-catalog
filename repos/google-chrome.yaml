@@ -1,9 +1,0 @@
-name: google-chrome
-uris: https://dl.google.com/linux/chrome-stable/deb/
-suites: [stable]
-components: [main]
-architectures: [amd64]
-adds-source: google-chrome-stable
-key:
-  url: https://dl.google.com/linux/linux_signing_key.pub
-  fingerprints: [EB4C1BFD4F042F6DDDCCEC917721F63BD38B4796]

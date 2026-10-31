@@ -1,6 +1,5 @@
 name: tailscale
 summary: VPN from Tailscale
-kind: apt
 homepage: https://tailscale.com/download/linux
-repo: tailscale
-packages: [tailscale]
+inputs:
+  - apt: {index: tailscale, package: tailscale}

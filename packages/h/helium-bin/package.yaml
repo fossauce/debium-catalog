@@ -1,0 +1,5 @@
+name: helium-bin
+summary: Web browser from Helium
+homepage: https://helium.computer/
+inputs:
+  - apt: {index: helium, package: helium-bin}

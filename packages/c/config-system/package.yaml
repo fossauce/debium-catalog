@@ -1,9 +1,8 @@
 name: config-system
 summary: System tuning
 description: Writeback limits, cache and huge page tuning, BFQ for SATA, USB and SD, 15s shutdown timeout, 1 GB journal, no beeper or watchdogs, quieter rtkit; on desktops, SATA at full power.
-kind: config
 version: "1"
-files:
+inputs:
   - {local: 99-system.conf, to: /usr/lib/sysctl.d/99-debium-system.conf}
   - {local: 00-timeout.conf, to: /usr/lib/systemd/system.conf.d/00-debium-timeout.conf}
   - {local: 00-timeout.conf, to: /usr/lib/systemd/user.conf.d/00-debium-timeout.conf}
@@ -13,8 +12,13 @@ files:
   - {local: thp-defrag.conf, to: /usr/lib/tmpfiles.d/debium-thp-defrag.conf}
   - {local: pcspkr-blacklist.conf, to: /usr/lib/modprobe.d/debium-pcspkr-blacklist.conf}
   - {local: watchdog-blacklist.conf, to: /usr/lib/modprobe.d/debium-watchdog-blacklist.conf}
-  - {local: 50-sata-power.rules, to: /usr/lib/udev/rules.d/50-debium-sata-power.rules, when: {chassis: desktop}}
   - {local: rtkit-loglevel.conf, to: /usr/lib/systemd/system/rtkit-daemon.service.d/debium-loglevel.conf}
+  - {local: 50-sata-power.rules}
+build:
+  script: |
+    if [ "$CHASSIS" = desktop ]; then
+      install -Dm644 50-sata-power.rules "$DESTDIR/usr/lib/udev/rules.d/50-debium-sata-power.rules"
+    fi
 notes:
   install: Applies at the next login or after a reboot.
   remove: Some settings stay until a reboot.

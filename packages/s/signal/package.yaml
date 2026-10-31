@@ -1,6 +1,0 @@
-name: signal
-summary: Messenger from Signal
-kind: apt
-homepage: https://signal.org/download/linux/
-repo: signal
-packages: [signal-desktop]

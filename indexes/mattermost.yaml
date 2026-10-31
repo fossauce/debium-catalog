@@ -1,0 +1,7 @@
+name: mattermost
+uri: https://deb.packages.mattermost.com
+suite: stable
+components: [main]
+key:
+  url: https://deb.packages.mattermost.com/pubkey.gpg
+  fingerprints: [A1B31D46F0F3A10B02CF2D44F8F2C31744774B28]

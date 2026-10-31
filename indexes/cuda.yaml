@@ -1,0 +1,6 @@
+name: cuda
+uri: https://developer.download.nvidia.com/compute/cuda/repos/debian{release}/x86_64/
+suite: /
+key:
+  url: https://developer.download.nvidia.com/compute/cuda/repos/debian{release}/x86_64/8793F200.pub
+  fingerprints: [02182E60104FCDC26EAE1B8597A5D4CB8793F200]

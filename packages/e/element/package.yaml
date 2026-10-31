@@ -1,6 +1,0 @@
-name: element
-summary: Matrix client from Element
-kind: apt
-homepage: https://element.io/download
-repo: element
-packages: [element-desktop]

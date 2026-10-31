@@ -1,6 +1,0 @@
-name: opera
-summary: Web browser from Opera
-kind: apt
-homepage: https://www.opera.com/
-repo: opera
-packages: [opera-stable]

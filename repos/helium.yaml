@@ -1,8 +1,0 @@
-name: helium
-uris: https://pkg.helium.computer/deb
-suites: [stable]
-components: [main]
-architectures: [amd64]
-key:
-  url: https://raw.githubusercontent.com/imputnet/helium-linux/main/pubkey.asc
-  fingerprints: [BE677C1989D35EAB2C5F26C9351601AD01D6378E]

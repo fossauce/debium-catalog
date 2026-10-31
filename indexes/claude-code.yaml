@@ -1,0 +1,7 @@
+name: claude-code
+uri: https://downloads.claude.ai/claude-code/apt/stable/
+suite: stable
+components: [main]
+key:
+  url: https://downloads.claude.ai/keys/claude-code.asc
+  fingerprints: [31DDDE24DDFAB679F42D7BD2BAA929FF1A7ECACE]

@@ -1,8 +1,7 @@
 name: gaming-apps
 summary: Steam, Lutris, gamescope
 description: gamescope from backports.
-kind: meta
-version: "1"
+kind: debian
 requires: [gaming-meta, mangohud, goverlay, sources-nonfree, sources-backports]
 depends: [steam-installer, lutris, gamescope]
 pins:

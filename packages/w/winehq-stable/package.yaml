@@ -1,10 +1,12 @@
 name: winehq-stable
 summary: Wine stable from WineHQ
 description: 64-bit and 32-bit, with winetricks.
-kind: apt
 homepage: https://www.winehq.org/
 requires: [i386, sources-nonfree]
-repo: winehq
-packages: [winehq-stable]
-allow: [wine-stable, wine-stable-amd64, wine-stable-i386]
-with: [winetricks]
+depends: [winetricks]
+inputs:
+  - apt: {index: winehq, package: winehq-stable}
+  - apt: {index: winehq, package: wine-stable}
+  - apt: {index: winehq, package: wine-stable-amd64}
+  - apt: {index: winehq, package: wine-stable-i386}
+    arch: i386

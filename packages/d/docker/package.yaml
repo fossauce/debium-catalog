@@ -1,8 +1,0 @@
-name: docker
-summary: Docker Engine from Docker
-kind: apt
-homepage: https://docs.docker.com/engine/install/debian/
-repo: docker
-packages: [docker-ce, docker-ce-cli, containerd.io, docker-buildx-plugin, docker-compose-plugin]
-allow: [docker-ce-rootless-extras]
-user-groups: [docker]

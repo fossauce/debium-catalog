@@ -1,0 +1,7 @@
+name: signal
+uri: https://updates.signal.org/desktop/apt
+suite: xenial
+components: [main]
+key:
+  url: https://updates.signal.org/desktop/apt/keys.asc
+  fingerprints: [DBA36B5181D0C816F630E889D980A17457F6FB06]

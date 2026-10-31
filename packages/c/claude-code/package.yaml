@@ -1,6 +1,5 @@
 name: claude-code
 summary: Coding agent from Anthropic
-kind: apt
 homepage: https://code.claude.com/
-repo: claude-code
-packages: [claude-code]
+inputs:
+  - apt: {index: claude-code, package: claude-code}

@@ -1,0 +1,5 @@
+name: google-chrome-stable
+summary: Web browser from Google
+homepage: https://www.google.com/chrome/
+inputs:
+  - apt: {index: google-chrome, package: google-chrome-stable}

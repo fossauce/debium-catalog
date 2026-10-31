@@ -1,8 +1,7 @@
 name: firmware
 summary: Firmware and CPU microcode
 description: firmware-linux; firmware from backports, microcode from the release.
-kind: meta
-version: "1"
+kind: debian
 requires: [sources-nonfree, sources-backports]
 depends: [firmware-linux]
 pins:

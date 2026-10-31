@@ -1,0 +1,5 @@
+name: mattermost-desktop
+summary: Team chat from Mattermost
+homepage: https://mattermost.com/download/
+inputs:
+  - apt: {index: mattermost, package: mattermost-desktop}

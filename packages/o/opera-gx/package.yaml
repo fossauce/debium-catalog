@@ -1,6 +1,0 @@
-name: opera-gx
-summary: Gaming web browser from Opera
-kind: apt
-homepage: https://www.opera.com/gx
-repo: opera-gx
-packages: [opera-gx-stable]

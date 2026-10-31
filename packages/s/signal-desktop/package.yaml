@@ -1,0 +1,5 @@
+name: signal-desktop
+summary: Messenger from Signal
+homepage: https://signal.org/download/linux/
+inputs:
+  - apt: {index: signal, package: signal-desktop}

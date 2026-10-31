@@ -1,6 +1,5 @@
 name: sources-nonfree
 summary: Debian contrib, non-free, non-free-firmware
 description: For the release, updates and security.
-kind: meta
-version: "1"
-debian-components: [contrib, non-free, non-free-firmware]
+kind: debian
+components: [contrib, non-free, non-free-firmware]

@@ -1,0 +1,7 @@
+name: microsoft-edge
+uri: https://packages.microsoft.com/repos/edge-stable
+suite: stable
+components: [main]
+key:
+  url: https://packages.microsoft.com/keys/microsoft.asc
+  fingerprints: [BC528686B50D79E339D3721CEB3E94ADBE1229CF]

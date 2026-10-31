@@ -1,6 +1,5 @@
 name: mullvad-vpn
 summary: VPN from Mullvad
-kind: apt
 homepage: https://mullvad.net/download
-repo: mullvad
-packages: [mullvad-vpn]
+inputs:
+  - apt: {index: mullvad, package: mullvad-vpn}

@@ -1,0 +1,5 @@
+name: microsoft-edge-stable
+summary: Web browser from Microsoft
+homepage: https://www.microsoft.com/edge
+inputs:
+  - apt: {index: microsoft-edge, package: microsoft-edge-stable}

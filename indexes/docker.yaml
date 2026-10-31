@@ -1,0 +1,7 @@
+name: docker
+uri: https://download.docker.com/linux/debian
+suite: "{codename}"
+components: [stable]
+key:
+  url: https://download.docker.com/linux/debian/gpg
+  fingerprints: [9DC858229FC7DD38854AE2D88D81803C0EBFCD88]

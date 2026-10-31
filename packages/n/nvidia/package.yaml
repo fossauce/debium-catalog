@@ -1,10 +1,12 @@
+# NVIDIA's stack replaces Debian's driver packages on purpose: no pin.
 name: nvidia
-summary: NVIDIA driver from NVIDIA's repository
+summary: Driver from NVIDIA
 description: Open kernel modules. Turing and newer.
-kind: apt
+kind: vendor-stack
 homepage: https://developer.nvidia.com/datacenter-driver-downloads
-repo: cuda
-packages: [cuda-keyring, nvidia-open]
-with: [nvtop]
+index: cuda
+packages: [nvidia-open]
+pin: false
+depends: [nvtop]
 notes:
   install: Loads after a reboot.

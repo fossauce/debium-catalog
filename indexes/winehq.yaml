@@ -1,0 +1,7 @@
+name: winehq
+uri: https://dl.winehq.org/wine-builds/debian
+suite: "{codename}"
+components: [main]
+key:
+  url: https://dl.winehq.org/wine-builds/winehq.key
+  fingerprints: [D43F640145369C51D786DDEA76F1A20FF987672F]

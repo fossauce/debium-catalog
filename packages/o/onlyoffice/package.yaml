@@ -1,6 +1,0 @@
-name: onlyoffice
-summary: Office suite from ONLYOFFICE
-kind: apt
-homepage: https://www.onlyoffice.com/desktop
-repo: onlyoffice
-packages: [onlyoffice-desktopeditors]

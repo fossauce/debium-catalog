@@ -1,7 +1,6 @@
 name: code
 summary: Code editor from Microsoft
-kind: apt
 homepage: https://code.visualstudio.com/
-repo: vscode
-packages: [code]
-with: [gpg]
+depends: [gpg]
+inputs:
+  - apt: {index: vscode, package: code}

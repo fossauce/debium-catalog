@@ -1,6 +1,5 @@
 name: sources-backports
 summary: Debian backports
 description: "At Debian's default priority: used only when asked for or pinned."
-kind: meta
-version: "1"
-debian-suites: [backports]
+kind: debian
+suites: [backports]

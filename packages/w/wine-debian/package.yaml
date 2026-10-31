@@ -1,8 +1,7 @@
 name: wine-debian
 summary: Wine from Debian
 description: 64-bit and 32-bit, with winetricks.
-kind: meta
-version: "1"
+kind: debian
 architectures: [i386]
 requires: [sources-nonfree]
 depends: [wine, wine64, "wine32:i386", winetricks]

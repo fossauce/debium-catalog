@@ -1,6 +1,0 @@
-name: spotify
-summary: Music streaming client
-kind: apt
-homepage: https://www.spotify.com/
-repo: spotify
-packages: [spotify-client]

@@ -1,10 +1,9 @@
 name: zram
 summary: Compressed swap in RAM
 description: zstd, half of RAM, at most 8 GiB; swappiness 100, page-cluster 0.
-kind: config
 version: "1"
 depends: [systemd-zram-generator]
-files:
+inputs:
   - {local: zram.conf, to: /usr/lib/systemd/zram-generator.conf.d/debium-zram.conf}
   - {local: 99-zram.conf, to: /usr/lib/sysctl.d/99-debium-zram.conf}
 notes:

@@ -1,6 +1,0 @@
-name: google-chrome
-summary: Web browser from Google
-kind: apt
-homepage: https://www.google.com/chrome/
-repo: google-chrome
-packages: [google-chrome-stable]

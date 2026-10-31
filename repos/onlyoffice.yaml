@@ -1,8 +1,0 @@
-name: onlyoffice
-uris: https://download.onlyoffice.com/repo/debian
-suites: [squeeze]
-components: [main]
-architectures: [amd64]
-key:
-  url: https://download.onlyoffice.com/GPG-KEY-ONLYOFFICE
-  fingerprints: [E09CA29F6E178040EF22B4098320CA65CB2DE8E5]

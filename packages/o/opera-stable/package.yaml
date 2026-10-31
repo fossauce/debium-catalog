@@ -1,0 +1,5 @@
+name: opera-stable
+summary: Web browser from Opera
+homepage: https://www.opera.com/
+inputs:
+  - apt: {index: opera, package: opera-stable}

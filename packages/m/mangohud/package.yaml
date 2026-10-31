@@ -1,50 +1,26 @@
 name: mangohud
 summary: Vulkan and OpenGL overlay
 description: Upstream build, 64-bit and 32-bit, with NVIDIA stats.
-kind: repack
 homepage: https://github.com/flightlessmango/MangoHud
-watch: {github: flightlessmango/MangoHud}
+license: MIT
 version: 0.8.4
 replaces-debian: true
-depends: ["libc6 (>= 2.38)", libgcc-s1, libxkbcommon0, libwayland-client0]
-sources:
-  - id: bin
-    arch: amd64
-    url: https://github.com/flightlessmango/MangoHud/releases/download/v{version}/MangoHud-{version}.r0.g992103e.tar.gz
+depends: [libxkbcommon0, libwayland-client0]
+inputs:
+  - url: https://github.com/flightlessmango/MangoHud/releases/download/v{version}/MangoHud-{version}.r0.g992103e.tar.gz
     sha256: aa0b2a009552f5e7c50baabf361267a79ea5e5c0fea440786f3b202d51f57753
     size: 10282346
-    extract: {format: tar.gz, strip: 1, inner: MangoHud-package.tar}
-  - id: license
-    url: https://raw.githubusercontent.com/flightlessmango/MangoHud/v{version}/LICENSE
+    arch: amd64
+  - url: https://raw.githubusercontent.com/flightlessmango/MangoHud/v{version}/LICENSE
     sha256: 18503b2b95a4340a5c2a6854825e97a20f20a8ff06b971feb63654c45c9c482c
     size: 1072
-files:
-  - {from: bin, path: usr/bin/mangohud, to: /usr/bin/mangohud, mode: "0755"}
-  - {from: bin, path: usr/lib/mangohud/lib64/libMangoHud.so, to: /usr/lib/mangohud/lib64/libMangoHud.so}
-  - {from: bin, path: usr/lib/mangohud/lib64/libMangoHud_opengl.so, to: /usr/lib/mangohud/lib64/libMangoHud_opengl.so}
-  - {from: bin, path: usr/lib/mangohud/lib64/libMangoHud_shim.so, to: /usr/lib/mangohud/lib64/libMangoHud_shim.so}
-  - {from: bin, path: usr/lib/mangohud/lib32/libMangoHud.so, to: /usr/lib/mangohud/lib32/libMangoHud.so}
-  - {from: bin, path: usr/lib/mangohud/lib32/libMangoHud_opengl.so, to: /usr/lib/mangohud/lib32/libMangoHud_opengl.so}
-  - {from: bin, path: usr/lib/mangohud/lib32/libMangoHud_shim.so, to: /usr/lib/mangohud/lib32/libMangoHud_shim.so}
-  - {from: bin, path: usr/share/vulkan/implicit_layer.d/MangoHud.x86_64.json, to: /usr/share/vulkan/implicit_layer.d/MangoHud.x86_64.json}
-  - {from: bin, path: usr/share/vulkan/implicit_layer.d/MangoHud.x86.json, to: /usr/share/vulkan/implicit_layer.d/MangoHud.x86.json}
-  - {from: bin, path: usr/share/man/man1/mangohud.1, to: /usr/share/man/man1/mangohud.1}
-  - {from: bin, path: usr/share/icons/hicolor/scalable/apps/io.github.flightlessmango.mangohud.svg, to: /usr/share/icons/hicolor/scalable/apps/io.github.flightlessmango.mangohud.svg}
-  - {from: bin, path: usr/share/metainfo/io.github.flightlessmango.mangohud.metainfo.xml, to: /usr/share/metainfo/io.github.flightlessmango.mangohud.metainfo.xml}
-  - {from: bin, path: usr/share/doc/mangohud/MangoHud.conf.example, to: /usr/share/doc/mangohud/MangoHud.conf.example}
-  - {from: bin, path: usr/share/doc/mangohud/presets.conf.example, to: /usr/share/doc/mangohud/presets.conf.example}
-  - {from: license, to: /usr/share/doc/mangohud/copyright}
-  - {link: /usr/lib/mangohud/lib, target: /usr/lib/mangohud/lib32}
-  - {link: /usr/lib/mangohud/x86_64, target: /usr/lib/mangohud/lib64}
-  - {link: /usr/lib/mangohud/x86_64-linux-gnu, target: /usr/lib/mangohud/lib64}
-  - {link: /usr/lib/mangohud/lib64/x86_64, target: /usr/lib/mangohud/lib64}
-  - {link: /usr/lib/mangohud/lib64/x86_64-linux-gnu, target: /usr/lib/mangohud/lib64}
-  - {link: /usr/lib/mangohud/i686, target: /usr/lib/mangohud/lib32}
-  - {link: /usr/lib/mangohud/i386-linux-gnu, target: /usr/lib/mangohud/lib32}
-  - {link: /usr/lib/mangohud/i686-linux-gnu, target: /usr/lib/mangohud/lib32}
-  - {link: /usr/lib/mangohud/lib32/i386-linux-gnu, target: /usr/lib/mangohud/lib32}
-  - {link: /usr/lib/mangohud/lib32/i686-linux-gnu, target: /usr/lib/mangohud/lib32}
-  - {link: /usr/lib/mangohud/lib32/x86_64-linux-gnu, target: /usr/lib/mangohud/lib64}
-  - {link: /usr/lib/mangohud/lib32/tls, target: /usr/lib/mangohud/tls}
-  - {link: /usr/lib/mangohud/tls/i686, target: /usr/lib/mangohud/lib32}
-  - {link: /usr/lib/mangohud/tls/x86_64, target: /usr/lib/mangohud/lib64}
+    to: /usr/share/doc/mangohud/copyright
+build:
+  script: |
+    tar -xf MangoHud-0.8.4.r0.g992103e/MangoHud/MangoHud-package.tar -C "$DESTDIR" --no-same-owner
+    rm "$DESTDIR/usr/bin/mangoplot"
+    cd "$DESTDIR/usr/lib/mangohud"
+    ln -s lib32 lib; ln -s lib32 i686; ln -s lib32 i386-linux-gnu; ln -s lib32 i686-linux-gnu
+    ln -s lib64 x86_64; ln -s lib64 x86_64-linux-gnu
+    ln -s . lib64/x86_64; ln -s . lib64/x86_64-linux-gnu
+    ln -s . lib32/i386-linux-gnu; ln -s . lib32/i686-linux-gnu; ln -s ../lib64 lib32/x86_64-linux-gnu

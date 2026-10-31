@@ -1,0 +1,5 @@
+name: spotify-client
+summary: Music streaming from Spotify
+homepage: https://www.spotify.com/
+inputs:
+  - apt: {index: spotify, package: spotify-client}

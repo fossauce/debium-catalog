@@ -1,16 +1,11 @@
 name: goverlay
 summary: GUI for MangoHud and vkBasalt
 description: Upstream build.
-kind: deb
 homepage: https://github.com/benjamimgois/goverlay
-watch: {github: benjamimgois/goverlay}
 version: 1.9.4
 replaces-debian: true
-depends: ["libc6 (>= 2.34)", libqt6pas6, libx11-6]
-recommends: [mangohud, vkbasalt]
-sources:
-  - id: deb
-    arch: amd64
-    url: https://github.com/benjamimgois/goverlay/releases/download/{version}/goverlay-{version}-x86_64.deb
+inputs:
+  - url: https://github.com/benjamimgois/goverlay/releases/download/{version}/goverlay-{version}-x86_64.deb
     sha256: 83f765dfb9725755db38883f1cdd6f57c8bc690a8cb0f30f2b6dd9f87a4729ca
     size: 19789712
+    arch: amd64

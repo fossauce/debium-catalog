@@ -1,0 +1,6 @@
+name: brave-browser
+summary: Web browser from Brave
+homepage: https://brave.com/linux/
+inputs:
+  - apt: {index: brave, package: brave-browser}
+  - apt: {index: brave, package: brave-keyring}

@@ -1,0 +1,5 @@
+name: zerotier-one
+summary: Virtual network from ZeroTier
+homepage: https://www.zerotier.com/download/
+inputs:
+  - apt: {index: zerotier, package: zerotier-one}

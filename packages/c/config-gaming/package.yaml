@@ -1,9 +1,8 @@
 name: config-gaming
 summary: Gaming tuning
 description: Split-lock mitigation off, ntsync for Wine and Proton, CPU power readable by the video group.
-kind: config
 version: "1"
-files:
+inputs:
   - {local: 99-gaming.conf, to: /usr/lib/sysctl.d/99-debium-gaming.conf}
   - {local: 75-powercap.rules, to: /usr/lib/udev/rules.d/75-powercap.rules}
   - {local: ntsync.conf, to: /usr/lib/modules-load.d/debium-ntsync.conf}

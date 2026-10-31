@@ -1,6 +1,5 @@
 name: power-profiles
 summary: Power profiles with tuned
 description: tuned and tuned-ppd instead of power-profiles-daemon.
-kind: meta
 version: "1"
 depends: [tuned, tuned-ppd]

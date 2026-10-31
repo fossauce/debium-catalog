@@ -1,8 +1,0 @@
-name: signal
-uris: https://updates.signal.org/desktop/apt
-suites: [xenial]
-components: [main]
-architectures: [amd64]
-key:
-  url: https://updates.signal.org/desktop/apt/keys.asc
-  fingerprints: [DBA36B5181D0C816F630E889D980A17457F6FB06]

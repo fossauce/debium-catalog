@@ -1,22 +1,17 @@
 name: pfetch
 summary: System information tool
 description: pfetch in Rust.
-kind: repack
 homepage: https://github.com/Gobidev/pfetch-rs
-watch: {github: Gobidev/pfetch-rs}
+license: MIT
 version: 3.1.1
-depends: ["libc6 (>= 2.39)", "libgcc-s1 (>= 4.2)"]
-sources:
-  - id: bin
-    arch: amd64
-    url: https://github.com/Gobidev/pfetch-rs/releases/download/v{version}/pfetch-linux-gnu-x86_64.tar.gz
+inputs:
+  - url: https://github.com/Gobidev/pfetch-rs/releases/download/v{version}/pfetch-linux-gnu-x86_64.tar.gz
     sha256: 31628f2d9d463beff1fa36e748250a462b0d69358aa03dfe898fccb34e24df09
     size: 1599737
-    extract: {format: tar.gz}
-  - id: license
-    url: https://raw.githubusercontent.com/Gobidev/pfetch-rs/v{version}/LICENSE
+    arch: amd64
+  - url: https://raw.githubusercontent.com/Gobidev/pfetch-rs/v{version}/LICENSE
     sha256: 1e902803f2af4d1d1e69105574928752a7faa4bd909823a481373c369482d503
     size: 1060
-files:
-  - {from: bin, path: pfetch, to: /usr/bin/pfetch, mode: "0755"}
-  - {from: license, to: /usr/share/doc/pfetch/copyright}
+    to: /usr/share/doc/pfetch/copyright
+build:
+  script: install -D pfetch-linux-gnu-x86_64/pfetch "$DESTDIR/usr/bin/pfetch"

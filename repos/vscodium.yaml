@@ -1,8 +1,0 @@
-name: vscodium
-uris: https://download.vscodium.com/debs
-suites: [vscodium]
-components: [main]
-architectures: [amd64]
-key:
-  url: https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
-  fingerprints: [1302DE60231889FE1EBACADC54678CF75A278D9C]

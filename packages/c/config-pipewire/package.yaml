@@ -3,12 +3,16 @@
 name: config-pipewire
 summary: Audio tuning
 description: Higher Wine quantum, 44.1 and 96 kHz without resampling, HDMI and DisplayPort ranked last; on desktops, outputs never suspend.
-kind: config
 version: "1"
-files:
+inputs:
   - {local: 10-sample-rates.conf, to: /usr/share/pipewire/pipewire.conf.d/10-debium-sample-rates.conf}
   - {local: 10-wine-audio.conf, to: /usr/share/pipewire/pipewire-pulse.conf.d/10-debium-wine-audio.conf}
   - {local: 52-hdmi-priority.conf, to: /usr/share/wireplumber/wireplumber.conf.d/52-debium-hdmi-priority.conf}
-  - {local: 51-disable-suspend.conf, to: /usr/share/wireplumber/wireplumber.conf.d/51-debium-disable-suspend.conf, when: {chassis: desktop}}
+  - {local: 51-disable-suspend.conf}
+build:
+  script: |
+    if [ "$CHASSIS" = desktop ]; then
+      install -Dm644 51-disable-suspend.conf "$DESTDIR/usr/share/wireplumber/wireplumber.conf.d/51-debium-disable-suspend.conf"
+    fi
 notes:
   install: Applies at the next login. Real-time audio needs the pipewire group.

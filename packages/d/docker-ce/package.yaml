@@ -1,0 +1,10 @@
+name: docker-ce
+summary: Docker Engine from Docker
+homepage: https://docs.docker.com/engine/install/debian/
+user-groups: [docker]
+inputs:
+  - apt: {index: docker, package: docker-ce}
+  - apt: {index: docker, package: docker-ce-cli}
+  - apt: {index: docker, package: containerd.io}
+  - apt: {index: docker, package: docker-buildx-plugin}
+  - apt: {index: docker, package: docker-compose-plugin}

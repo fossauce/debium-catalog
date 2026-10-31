@@ -1,0 +1,7 @@
+name: element
+uri: https://packages.element.io/debian
+suite: default
+components: [main]
+key:
+  url: https://packages.element.io/debian/element-io-archive-keyring.gpg
+  fingerprints: [12D4CD600C2240A9F4A82071D7B0B66941D01538]

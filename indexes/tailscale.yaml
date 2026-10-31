@@ -1,0 +1,7 @@
+name: tailscale
+uri: https://pkgs.tailscale.com/stable/debian
+suite: "{codename}"
+components: [main]
+key:
+  url: https://pkgs.tailscale.com/stable/debian/{codename}.noarmor.gpg
+  fingerprints: [2596A99EAAB33821893C0A79458CA832957F5868]

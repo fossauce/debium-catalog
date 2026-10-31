@@ -1,6 +1,0 @@
-name: zerotier
-summary: Virtual network from ZeroTier
-kind: apt
-homepage: https://www.zerotier.com/download/
-repo: zerotier
-packages: [zerotier-one]

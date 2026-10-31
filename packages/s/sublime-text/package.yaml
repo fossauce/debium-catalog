@@ -1,6 +1,5 @@
 name: sublime-text
 summary: Text editor from Sublime HQ
-kind: apt
 homepage: https://www.sublimehq.com/
-repo: sublime
-packages: [sublime-text]
+inputs:
+  - apt: {index: sublime, package: sublime-text}

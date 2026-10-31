@@ -1,0 +1,5 @@
+name: onlyoffice-desktopeditors
+summary: Office suite from ONLYOFFICE
+homepage: https://www.onlyoffice.com/desktop
+inputs:
+  - apt: {index: onlyoffice, package: onlyoffice-desktopeditors}

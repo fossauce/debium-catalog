@@ -1,0 +1,5 @@
+name: slack-desktop
+summary: Team chat from Slack
+homepage: https://slack.com/downloads/linux
+inputs:
+  - apt: {index: slack, package: slack-desktop}

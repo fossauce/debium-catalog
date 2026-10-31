@@ -1,8 +1,7 @@
 name: nvidia-vaapi
 summary: VA-API driver for NVIDIA, from backports
 description: nvidia-vaapi-driver.
-kind: meta
-version: "1"
+kind: debian
 requires: [sources-backports, nvidia]
 depends: [nvidia-vaapi-driver]
 pins:
