@@ -54,6 +54,7 @@ installs the rest from `$SRC` into `$DESTDIR`.
   one of them. Its `build.script` adds what the vendor's scripts would have
   (links, icons, menu entries) as files in that package.
 - A changed definition raises `revision`; a new `version` resets it to 1.
+  Rebuilt vendor .debs take `<version>+debium<revision>`.
 - `maintainer: Name <email>`; default `FOSSauce <fossauce@tuta.io>`.
 - Files go under `/usr` and `/opt/<name>`. `/etc` and `/usr/local` are
   refused, except `/etc/fonts/conf.d/NN-name.conf`, a link to the same name in
