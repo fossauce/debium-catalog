@@ -1,0 +1,10 @@
+name: slack
+uris: https://packagecloud.io/slacktechnologies/slack/debian/
+suites: [jessie]
+components: [main]
+architectures: [amd64]
+key:
+  url: https://packagecloud.io/slacktechnologies/slack/gpgkey
+  fingerprints: [DB085A08CA13B8ACB917E0F6D938EC0D038651BD]
+# /etc/cron.daily/slack would add slack.list and keys in trusted.gpg.d.
+cron-opt-out: slack
