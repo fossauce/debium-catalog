@@ -1,0 +1,8 @@
+name: zerotier
+uris: https://download.zerotier.com/debian/{codename}
+suites: ["{codename}"]
+components: [main]
+architectures: [amd64]
+key:
+  url: https://download.zerotier.com/contact%40zerotier.com.gpg
+  fingerprints: [74A5E9C458E1A431F1DA57A71657198823E52A61]

@@ -1,0 +1,6 @@
+name: claude-desktop
+summary: Claude app from Anthropic
+kind: apt
+homepage: https://claude.ai/download
+repo: claude-desktop
+packages: [claude-desktop]

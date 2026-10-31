@@ -1,0 +1,9 @@
+name: claude-desktop
+uris: https://downloads.claude.ai/claude-desktop/apt/stable
+suites: [stable]
+components: [main]
+architectures: [amd64]
+adds-source: claude-desktop
+key:
+  url: https://downloads.claude.ai/keys/claude-code.asc
+  fingerprints: [31DDDE24DDFAB679F42D7BD2BAA929FF1A7ECACE]

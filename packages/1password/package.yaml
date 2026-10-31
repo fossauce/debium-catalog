@@ -1,0 +1,6 @@
+name: 1password
+summary: Password manager from 1Password
+kind: apt
+homepage: https://1password.com/downloads/linux
+repo: 1password
+packages: [1password]

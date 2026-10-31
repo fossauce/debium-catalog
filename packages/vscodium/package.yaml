@@ -1,0 +1,6 @@
+name: vscodium
+summary: Code editor, VS Code without Microsoft's telemetry
+kind: apt
+homepage: https://vscodium.com/
+repo: vscodium
+packages: [codium]

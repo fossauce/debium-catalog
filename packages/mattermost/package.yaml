@@ -1,0 +1,6 @@
+name: mattermost
+summary: Mattermost desktop client
+kind: apt
+homepage: https://mattermost.com/download/
+repo: mattermost
+packages: [mattermost-desktop]
