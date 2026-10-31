@@ -1,0 +1,10 @@
+name: winehq-staging
+summary: Wine staging from WineHQ
+description: 64-bit and 32-bit, with winetricks.
+kind: apt
+homepage: https://www.winehq.org/
+requires: [i386, sources-nonfree]
+repo: winehq
+packages: [winehq-staging]
+allow: [wine-staging, wine-staging-amd64, wine-staging-i386]
+with: [winetricks]

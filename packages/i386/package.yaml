@@ -1,0 +1,7 @@
+name: i386
+summary: 32-bit support
+description: Enables the i386 architecture.
+kind: meta
+version: "1"
+architectures: [i386]
+depends: ["libc6:i386"]
